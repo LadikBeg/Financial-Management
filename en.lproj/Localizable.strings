@@ -1,0 +1,38 @@
+/* 
+  Localizable.strings
+  Financial Management
+
+  Created by Vladyslav Behim on 24.09.2023.
+  
+*/
+
+"walletCardLabel" = "Card";
+"walletCashLabel" = "Cash";
+"walletBalanceLabel" = "Balance";
+"historyLabel" = "History";
+
+"BtnFP" = "Future payment";
+"BtnG" = "Goal";
+"BtnA" = "Analytics";
+"BtnT" = "Task";
+
+"incomeViewLabel" = "Income transaction";
+"expensesViewLabel" = "Expense transaction";
+
+"formCategory" = "Category";
+"categorySalary" = "💼 Salary";
+"categoryFreelance" = "👨🏻‍💻 Freelance";
+"categoryStock" = "📈 Stock";
+"categoryInterest" = "💰 Interest";
+"categoryPresent" = "🎁 Present";
+
+
+"formAdditionally" = "Additionally";
+"formWalletType" = "Wallet type";
+"additionallyDate" = "Date";
+"additionallyDateInfo" = "Default is current date";
+"additionallyNote" = "Note";
+"additionallyNoteInfo" = "The text of your note";
+
+"btnAdd" = "Add";
+

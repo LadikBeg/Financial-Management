@@ -1,0 +1,36 @@
+/* 
+  Localizable.strings
+  Financial Management
+
+  Created by Vladyslav Behim on 24.09.2023.
+  
+*/
+
+"walletCardLabel" = "Карта";
+"walletCashLabel" = "Наличные";
+"walletBalanceLabel" = "Баланс";
+"historyLabel" = "История";
+
+"BtnFP" = "Будущий платеж";
+"BtnG" = "Цель";
+"BtnA" = "Аналитика";
+"BtnT" = "Задачи";
+
+"incomeViewLabel" = "Доходная транзакция";
+"expensesViewLabel" = "Расходная транзакция";
+
+"formCategory" = "Категория";
+"categorySalary" = "💼 Зарплата";
+"categoryFreelance" = "👨🏻‍💻 Фриланс";
+"categoryStock" = "📈 Акции";
+"categoryInterest" = "💰 Проценты";
+"categoryPresent" = "🎁 Подарок";
+
+"formAdditionally" = "Дополнительно";
+"formWalletType" = "Тип кошелька";
+"additionallyDate" = "Дата";
+"additionallyDateInfo" = "Текущая дата установленна по умолчанию";
+"additionallyNote" = "Заметка";
+"additionallyNoteInfo" = "Текст вашей заметки";
+
+"btnAdd" = "Добавить";

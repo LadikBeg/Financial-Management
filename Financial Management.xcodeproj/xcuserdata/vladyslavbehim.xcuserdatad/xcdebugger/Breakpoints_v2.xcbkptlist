@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "7266D0AF-2D6B-4D60-931F-5A99EF38D1D1"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FC644720-FB2F-48BC-9484-7FDFADB239B8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Financial Management/View/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "MainView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "FC644720-FB2F-48BC-9484-7FDFADB239B8 - 4a46341b746d5aa2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of Financial_Management.MainView.kj : Swift.Bool"
+                  moduleName = "Financial Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladyslavbehim/Desktop/SwiftUI/Financial%20Management/Financial%20Management/View/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "FC644720-FB2F-48BC-9484-7FDFADB239B8 - 3f0cd2da374851f4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Financial_Management.MainView.kj.getter : Swift.Bool"
+                  moduleName = "Financial Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladyslavbehim/Desktop/SwiftUI/Financial%20Management/Financial%20Management/View/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "FC644720-FB2F-48BC-9484-7FDFADB239B8 - f218d7167f5f89f8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Financial_Management.MainView.kj.setter : Swift.Bool"
+                  moduleName = "Financial Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladyslavbehim/Desktop/SwiftUI/Financial%20Management/Financial%20Management/View/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  uuid = "FC644720-FB2F-48BC-9484-7FDFADB239B8 - 12eee2e0379877c9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Financial_Management.MainView.kj.modify : Swift.Bool"
+                  moduleName = "Financial Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladyslavbehim/Desktop/SwiftUI/Financial%20Management/Financial%20Management/View/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "188">
+               </Location>
+               <Location
+                  uuid = "FC644720-FB2F-48BC-9484-7FDFADB239B8 - f2877657334c21f8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Financial_Management.MainView.kj.modify : Swift.Bool with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Financial Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladyslavbehim/Desktop/SwiftUI/Financial%20Management/Financial%20Management/View/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "FC644720-FB2F-48BC-9484-7FDFADB239B8 - cbb2565b62c4c430"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Financial_Management.MainView.$kj.getter : SwiftUI.Binding&lt;Swift.Bool&gt;"
+                  moduleName = "Financial Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladyslavbehim/Desktop/SwiftUI/Financial%20Management/Financial%20Management/View/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "180">
+               </Location>
+               <Location
+                  uuid = "FC644720-FB2F-48BC-9484-7FDFADB239B8 - f3ca0a2d07581635"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Financial_Management.MainView.init() -&gt; Financial_Management.MainView"
+                  moduleName = "Financial Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladyslavbehim/Desktop/SwiftUI/Financial%20Management/Financial%20Management/View/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "FC644720-FB2F-48BC-9484-7FDFADB239B8 - 4411a4243f62d25b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of Financial_Management.MainView.showAddView : Swift.Bool"
+                  moduleName = "Financial Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladyslavbehim/Desktop/SwiftUI/Financial%20Management/Financial%20Management/View/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "FC644720-FB2F-48BC-9484-7FDFADB239B8 - c87b8e535186296d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Financial_Management.MainView.showAddView.getter : Swift.Bool"
+                  moduleName = "Financial Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladyslavbehim/Desktop/SwiftUI/Financial%20Management/Financial%20Management/View/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "FC644720-FB2F-48BC-9484-7FDFADB239B8 - a806f8f898d54e91"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Financial_Management.MainView.showAddView.setter : Swift.Bool"
+                  moduleName = "Financial Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladyslavbehim/Desktop/SwiftUI/Financial%20Management/Financial%20Management/View/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "144">
+               </Location>
+               <Location
+                  uuid = "FC644720-FB2F-48BC-9484-7FDFADB239B8 - f3b8854b51e64f62"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Financial_Management.MainView.showAddView.modify : Swift.Bool"
+                  moduleName = "Financial Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladyslavbehim/Desktop/SwiftUI/Financial%20Management/Financial%20Management/View/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "188">
+               </Location>
+               <Location
+                  uuid = "FC644720-FB2F-48BC-9484-7FDFADB239B8 - 4a722ac9f4e76291"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Financial_Management.MainView.showAddView.modify : Swift.Bool with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Financial Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladyslavbehim/Desktop/SwiftUI/Financial%20Management/Financial%20Management/View/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "FC644720-FB2F-48BC-9484-7FDFADB239B8 - 3578274984b36ca9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Financial_Management.MainView.$showAddView.getter : SwiftUI.Binding&lt;Swift.Bool&gt;"
+                  moduleName = "Financial Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladyslavbehim/Desktop/SwiftUI/Financial%20Management/Financial%20Management/View/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "180">
+               </Location>
+               <Location
+                  uuid = "FC644720-FB2F-48BC-9484-7FDFADB239B8 - f3ca0a2d07581635"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Financial_Management.MainView.init() -&gt; Financial_Management.MainView"
+                  moduleName = "Financial Management"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladyslavbehim/Desktop/SwiftUI/Financial%20Management/Financial%20Management/View/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "112">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
