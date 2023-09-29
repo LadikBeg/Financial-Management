@@ -58,20 +58,21 @@ class Transaction:Wallet{
 }
 
 class Goal:Wallet{
-
     var goalName:String
     var collectedMoney:Double
     var amountMoneyToGoal:Double
     var expirationDate:Date
     var startDate:Date
     var progress:Double
+    var showInfo:Bool
     
-    init(goalName: String, collectedMoney: Double,amountMoneyToGoal:Double, expirationDate: Date,startDate:Date,progress:Double) {
+    init(goalName: String, collectedMoney: Double,amountMoneyToGoal:Double, expirationDate: Date,startDate:Date,progress:Double,showInfo:Bool) {
         self.goalName = goalName
         self.collectedMoney = collectedMoney
         self.amountMoneyToGoal = amountMoneyToGoal
         self.expirationDate = expirationDate
         self.startDate = startDate
         self.progress = progress
+        self.showInfo = showInfo
     }
 }

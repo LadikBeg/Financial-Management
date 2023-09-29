@@ -12,7 +12,7 @@ struct AddMoneyToGoal: View {
     @State var id:UUID
     @State var amountMoney:String = ""
     @State var date = Date()
-    @ObservedObject var viewModel:ViewModel
+    @ObservedObject var viewModel:GoalViewModel
 
     func formatDate(date: Date) -> String {
         let dateFormatter = DateFormatter()
@@ -40,7 +40,7 @@ struct AddMoneyToGoal: View {
                     .keyboardType(.decimalPad)
                     .onChange(of: amountMoney) { newValue in
                         let filtered = newValue
-                            .replacingOccurrences(of: ",", with: ".") // Заменяем запятую на точку
+                            .replacingOccurrences(of: ",", with: ".") 
                             .filter { "0123456789.".contains($0) }
                         if filtered != newValue {
                             self.amountMoney = filtered
@@ -90,12 +90,11 @@ struct AddMoneyToGoal: View {
             }
             
         }
-        .animation(.default)
     }
 }
 
 struct AddMoneyToGoal_Previews: PreviewProvider {
     static var previews: some View {
-        AddMoneyToGoal(goalName: "Test", id: UUID(), viewModel: ViewModel())
+        AddMoneyToGoal(goalName: "Test", id: UUID(), viewModel: GoalViewModel())
     }
 }

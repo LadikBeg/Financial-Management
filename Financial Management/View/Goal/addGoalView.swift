@@ -12,7 +12,7 @@ struct addGoalView: View {
     @State var goalAmountMoney:String = ""
     @State var dateIsOn:Bool = false
     @State var date = Date()
-    @ObservedObject var viewModel:ViewModel
+    @ObservedObject var viewModel:GoalViewModel
 
     var body: some View {
         NavigationView{
@@ -32,6 +32,7 @@ struct addGoalView: View {
                     .padding()
                     .background(Color("TextFieldColor"))
                     .cornerRadius(15)
+                    .keyboardType(.default)
                     
                     TextField(text: $goalAmountMoney) {
                         Text("1000 €")
@@ -43,7 +44,7 @@ struct addGoalView: View {
                     .keyboardType(.decimalPad)
                     .onChange(of: goalAmountMoney) { newValue in
                         let filtered = newValue
-                            .replacingOccurrences(of: ",", with: ".") // Заменяем запятую на точку
+                            .replacingOccurrences(of: ",", with: ".") 
                             .filter { "0123456789.".contains($0) }
                         if filtered != newValue {
                             self.goalAmountMoney = filtered
@@ -100,17 +101,14 @@ struct addGoalView: View {
                     .padding(.bottom)
                     .foregroundColor(.white)
                 }
-                
-                
+
             }
-            
         }
-        .animation(.default)
     }
     }
 
 struct addGoalView_Previews: PreviewProvider {
     static var previews: some View {
-        addGoalView(viewModel: ViewModel())
+        addGoalView(viewModel: GoalViewModel())
     }
 }

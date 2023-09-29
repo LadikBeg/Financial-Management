@@ -98,13 +98,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		AC55CFF42AC1FC8B00B8D076 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
 		AC710B792AC227E3004FF157 /* Goal */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,7 +133,6 @@
 		ACB004A52ABB45D40014AF20 /* Financial Management */ = {
 			isa = PBXGroup;
 			children = (
-				AC55CFF42AC1FC8B00B8D076 /* Data */,
 				ACB004A62ABB45D40014AF20 /* Financial_ManagementApp.swift */,
 				ACFE22172ABC7C2A006BB18D /* ViewModel */,
 				ACFE22162ABC7C1A006BB18D /* Model  */,

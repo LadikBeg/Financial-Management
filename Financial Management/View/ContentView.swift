@@ -13,11 +13,11 @@ struct MainView: View {
     @State var showGoalView = false
     @State var showCalendarHistoryView = false
     @ObservedObject var viewModel = ViewModel()
+    @ObservedObject var goalViewModel = GoalViewModel()
     @State var selectedDate = Date()
     
     var wallet = Wallet.sharedWallet
     var body: some View {
-       
         VStack(alignment: .leading) {
             HStack{
                 Text("Financial Management")
@@ -187,10 +187,8 @@ struct MainView: View {
                                 .background(Color("ButtonColor"))
                                 .cornerRadius(.infinity)
                         }
-                        
-                        
                         .fullScreenCover(isPresented: $showGoalView) {
-                            GoalView(viewModel: viewModel)
+                            GoalView(viewModel: goalViewModel)
                         }
                         Button {
                             
