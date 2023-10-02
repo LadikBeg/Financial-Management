@@ -15,68 +15,65 @@ struct GoalView: View {
     @State var showInfoGoal:Bool = false
     @State var showAddMoneyToGoal:Bool = false
     @Environment(\.presentationMode) var presentationMode
-
-
+    func formatDate(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yy"
+        return dateFormatter.string(from: date)
+    }
+    
     var body: some View {
-        VStack{
-            HStack{
-                Button {
-                    presentationMode.wrappedValue.dismiss()
-                } label: {
-                    Text("Back")
-                }
-
-            }
-            if viewModel.getGoal().isEmpty{
-                addGoalView(viewModel: viewModel)
-            }else{
-                VStack{
-                    ScrollView{
-                        ForEach(viewModel.getGoal(), id: \.0) { id, goal in
-                            VStack{
-                                HStack{
-                                    Text(goal.goalName)
-                                    Spacer()
-                                    Text("\(String(goal.collectedMoney)) €")
-                                    Button {
-                                        showInfoGoal.toggle()
-                                    } label: {
-                                        Image(systemName: "info.circle")
+        NavigationView{
+            VStack{
+                if viewModel.goals.isEmpty{
+                    addGoalView(viewModel: viewModel)
+                }else{
+                    VStack{
+                        ScrollView{
+                            ForEach(viewModel.getGoal(), id: \.0) { id, goal in
+                                VStack(alignment:.leading){
+                                    HStack{
+                                        Text(goal.goalName)
+                                        Spacer()
+                                        Text("\(String(goal.collectedMoney)) €")
                                     }
-                                    .foregroundColor(Color("ButtonColor"))
-                                    .sheet(isPresented: $showInfoGoal) {
-                                        InfoGoalView(title: goal.goalName, collectedMoney: goal.collectedMoney, amountMoneyToGoal: goal.amountMoneyToGoal, progress: goal.progress, startDate: goal.startDate, expirationDate: goal.expirationDate)
+                                    VStack(alignment:.leading){
+                                        HStack{
+                                            Text("From:")
+                                            Text(formatDate(date: goal.startDate))
+                                            Spacer()
+                                            Text("Need to collect:")
+                                            Text(String(goal.amountMoneyToGoal))
+                                        }
                                     }
-                                    
-                                    Button {
-                                        showAddMoneyToGoal.toggle()
-                                    } label: {
-                                        Image(systemName: "plus.circle")
-                                    }
-                                    .foregroundColor(Color("ButtonColor"))
-                                    .sheet(isPresented: $showAddMoneyToGoal) {
-                                        AddMoneyToGoal(goalName: goal.goalName, id: id, viewModel: viewModel)
+                                    .font(.footnote)
+                                    .foregroundColor(.gray)
+                                    HStack{
+                                        ProgressView(value: goal.collectedMoney , total: goal.amountMoneyToGoal)
+                                        NavigationLink {
+                                            InfoGoalView(title: goal.goalName, collectedMoney: goal.collectedMoney, amountMoneyToGoal: goal.amountMoneyToGoal, progress: goal.progress, startDate: goal.startDate, expirationDate: Date())
+                                        } label: {
+                                            Image(systemName: "info.circle")
+                                        }
+                                        NavigationLink {
+                                            AddMoneyToGoal(goalName: goal.goalName, id: id, viewModel: viewModel,collectedMoney:goal.collectedMoney, amountMoneyToGoal:goal.amountMoneyToGoal)
+                                        } label: {
+                                            Image(systemName: "plus.circle")
+                                        }
                                     }
                                 }
-                                ProgressView(value: goal.collectedMoney , total: goal.amountMoneyToGoal)
-                                
+                                .padding()
+                                .background(Color("FormColor"))
+                                .cornerRadius(15)
                             }
-                            .padding()
-                            .background(Color("FormColor"))
-                            .cornerRadius(15)
                         }
                     }
+                    .padding()
+                    NavigationLink("Add goal") {
+                        addGoalView(viewModel: viewModel)
+                    }
                 }
-                .padding()
-                Button(action: {
-                    showAddGoalView.toggle()
-                }, label: {
-                    Text("Add goal")
-                })
-                .sheet(isPresented: $showAddGoalView, content: {
-                    addGoalView(viewModel: viewModel)
-                })
             }
+            .navigationTitle("Goal")
         }
     }
 }

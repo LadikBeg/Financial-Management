@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InfoGoalView: View {
-    @State var title:String
+    var title:String
     @State var collectedMoney:Double
     @State var amountMoneyToGoal:Double
     @State var progress:Double

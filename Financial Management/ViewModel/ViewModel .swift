@@ -90,11 +90,10 @@ class ViewModel:ObservableObject{
 class GoalViewModel:ObservableObject{
     @Published var goals:[UUID:Goal] = [:]
     var wallet = Wallet.sharedWallet
-
-    func addGoal(goalName:String , goalAmountMoney:Double , expirationDate:Date){
+    func addGoal(goalName:String , goalAmountMoney:Double){
         let id = UUID()
         print("id - \(id)")
-        let newGoal = Goal(goalName: goalName, collectedMoney: 0, amountMoneyToGoal: goalAmountMoney, expirationDate: expirationDate, startDate: Date(), progress: 0.0, showInfo: false)
+        let newGoal = Goal(goalName: goalName, collectedMoney: 0, amountMoneyToGoal: goalAmountMoney, startDate: Date(), progress: 0.0, showInfo: false)
         goals[id] = newGoal
         print("goal - \(goals)")
     }
@@ -102,10 +101,8 @@ class GoalViewModel:ObservableObject{
         let goalArray = self.goals.map { id, goal in
             (id, goal)
         }
-        
         return goalArray
     }
-    
     func addMoneyToGoal(amountMoney:Double,id:UUID){
         goals[id]?.collectedMoney += amountMoney
         let amount = wallet.getAmountMoneyCard() - amountMoney

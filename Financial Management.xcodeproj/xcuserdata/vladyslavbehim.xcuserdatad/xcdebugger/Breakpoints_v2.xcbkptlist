@@ -235,65 +235,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0B2AAF2D-0CF4-4352-B6DE-CC8BB2C1C47C"
+            uuid = "9E609B0E-EF8E-4B7A-B6A3-C842A0A53746"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Financial Management/View/Goal/GoalView.swift"
+            filePath = "Financial Management/View/Goal/AddMoneyToGoal.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "body"
             landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FF9D1FAD-9DAB-43E8-A271-6F9166772D72"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Financial Management/View/Goal/GoalView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "body"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "FF9D1FAD-9DAB-43E8-A271-6F9166772D72 - ab22bf5795ca01a6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;(Foundation.UUID, Financial_Management.Goal)&gt;, Foundation.UUID, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt; in closure #2 () -&gt; SwiftUI.ScrollView&lt;SwiftUI.ForEach&lt;Swift.Array&lt;(Foundation.UUID, Financial_Management.Goal)&gt;, Foundation.UUID, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.HStack&lt;SwiftUI.Button&lt;SwiftUI.Text&gt;&gt;, SwiftUI._ConditionalContent&lt;Financial_Management.addGoalView, SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.sheet&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, onDismiss: Swift.Optional&lt;() -&gt; ()&gt;, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0)&gt;&gt;)&gt; in Financial_Management.GoalView.body.getter : some"
-                  moduleName = "Financial Management"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vladyslavbehim/Desktop/Finance/Financial%20Management/Financial%20Management/View/Goal/GoalView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "264">
-               </Location>
-               <Location
-                  uuid = "FF9D1FAD-9DAB-43E8-A271-6F9166772D72 - a68da5b86afdc9d5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Foundation.UUID, Financial_Management.Goal) -&gt; &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;(Foundation.UUID, Financial_Management.Goal)&gt;, Foundation.UUID, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt; in closure #2 () -&gt; SwiftUI.ScrollView&lt;SwiftUI.ForEach&lt;Swift.Array&lt;(Foundation.UUID, Financial_Management.Goal)&gt;, Foundation.UUID, &lt;&lt;opaque return type of SwiftUI.View.cornerRadius(_: CoreGraphics.CGFloat, antialiased: Swift.Bool) -&gt; some&gt;&gt;.0&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.HStack&lt;SwiftUI.Button&lt;SwiftUI.Text&gt;&gt;, SwiftUI._ConditionalContent&lt;Financial_Management.addGoalView, SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, &lt;&lt;opaque return type of SwiftUI.View.sheet&lt;&#x3c4;_0_0 where &#x3c4;_1_0: SwiftUI.View&gt;(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, onDismiss: Swift.Optional&lt;() -&gt; ()&gt;, content: () -&gt; &#x3c4;_1_0) -&gt; some&gt;&gt;.0)&gt;&gt;)&gt; in Financial_Management.GoalView.body.getter : some"
-                  moduleName = "Financial Management"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/vladyslavbehim/Desktop/Finance/Financial%20Management/Financial%20Management/View/Goal/GoalView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "35"
-                  endingLineNumber = "35"
-                  offsetFromSymbolStart = "676">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

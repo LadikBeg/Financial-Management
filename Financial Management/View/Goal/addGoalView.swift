@@ -17,13 +17,6 @@ struct addGoalView: View {
     var body: some View {
         NavigationView{
             VStack{
-                //Title
-                HStack{
-                    Text("Goal").font(.title)
-                    Spacer()
-                }
-                .padding()
-                //AmountMoney
                 VStack{
                     TextField(text: $goalName) {
                         Text("iPhone")
@@ -85,7 +78,7 @@ struct addGoalView: View {
                 
                 //Add button
                 Button {
-                    viewModel.addGoal(goalName: goalName, goalAmountMoney: Double(goalAmountMoney) ?? 0, expirationDate: date)
+                    viewModel.addGoal(goalName: goalName, goalAmountMoney: Double(goalAmountMoney) ?? 0)
                 } label: {
                     HStack{
                         HStack{
@@ -104,6 +97,7 @@ struct addGoalView: View {
 
             }
         }
+        .padding(.top)
     }
     }
 
