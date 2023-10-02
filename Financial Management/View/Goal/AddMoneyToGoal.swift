@@ -75,6 +75,9 @@ struct AddMoneyToGoal: View {
                             Text("\(String(format: "%.2f",amountMoneyToGoal)) €")
                                 .foregroundColor(.gray)
                         }
+    
+                    }
+                    Section {
                         HStack{
                             Text("Осталось собрать")
                             Spacer()
