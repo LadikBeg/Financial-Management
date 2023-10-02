@@ -13,9 +13,8 @@ struct MainView: View {
     @State var showGoalView = false
     @State var showCalendarHistoryView = false
     @ObservedObject var viewModel = ViewModel()
-    @ObservedObject var goalViewModel = GoalViewModel()
-    @State var selectedDate = Date()
     
+    @State var selectedDate = Date()
     var wallet = Wallet.sharedWallet
     var body: some View {
         VStack(alignment: .leading) {
@@ -31,8 +30,8 @@ struct MainView: View {
                 CardView(cardViewData: CardViewData(amountMoney: wallet.getAmountMoneyCash()), viewModel: viewModel, walletType: "💶", walletTypeText: NSLocalizedString("walletCashLabel", comment: ""))
             }
             .padding(.bottom,7)
-        
-
+            
+            
             VStack(alignment: .leading){
                 HStack{
                     Text("historyLabel")
@@ -54,43 +53,43 @@ struct MainView: View {
                                 .accentColor(Color("DateColor"))
                             ScrollView{
                                 ForEach(viewModel.getTransactions(), id: \.0) { id, transaction in
-                                            if Calendar.current.isDate(transaction.date, inSameDayAs: selectedDate) {
-                                                VStack {
-                                                    VStack{
-                                                        HStack{
-                                                            HStack(spacing: 5){
-                                                                Text(String(transaction.typeTransaction))
-                                                                Text("\(String(transaction.amountMoneyToAdd)) €")
-                                                            }
-                                                            .foregroundColor(transaction.typeTransaction == "+" ? Color.green : Color.red)
-                                                            Spacer()
-                                                            VStack(spacing:10){
-                                                                HStack{
-                                                                    Spacer()
-                                                                    Text(String(transaction.category))
-                                                                    Text(transaction.walletType == "💳" ? "💳" : "💶")
-                                                                }
-                                                                if !transaction.note.isEmpty{
-                                                                    HStack{
-                                                                        Spacer()
-                                                                        Text("Note:")
-                                                                        Text(String(transaction.note))
-                                                                    }
-                                                                    
-                                                                }
-                                                            }
-                                                            .foregroundColor(.gray)
-                                                            .font(.footnote)
-                                                        }
-                                                        Divider()
+                                    if Calendar.current.isDate(transaction.date, inSameDayAs: selectedDate) {
+                                        VStack {
+                                            VStack{
+                                                HStack{
+                                                    HStack(spacing: 5){
+                                                        Text(String(transaction.typeTransaction))
+                                                        Text("\(String(transaction.amountMoneyToAdd)) €")
                                                     }
-                                                    .padding(.vertical,6)
-                                                    .padding(.horizontal)
+                                                    .foregroundColor(transaction.typeTransaction == "+" ? Color.green : Color.red)
+                                                    Spacer()
+                                                    VStack(spacing:10){
+                                                        HStack{
+                                                            Spacer()
+                                                            Text(String(transaction.category))
+                                                            Text(transaction.walletType == "💳" ? "💳" : "💶")
+                                                        }
+                                                        if !transaction.note.isEmpty{
+                                                            HStack{
+                                                                Spacer()
+                                                                Text("Note:")
+                                                                Text(String(transaction.note))
+                                                            }
+                                                            
+                                                        }
+                                                    }
+                                                    .foregroundColor(.gray)
+                                                    .font(.footnote)
                                                 }
-                                                .padding(.vertical, 6)
-                                                .padding(.horizontal)
+                                                Divider()
                                             }
+                                            .padding(.vertical,6)
+                                            .padding(.horizontal)
                                         }
+                                        .padding(.vertical, 6)
+                                        .padding(.horizontal)
+                                    }
+                                }
                             }
                         }
                     }
@@ -140,9 +139,9 @@ struct MainView: View {
                                 }
                                 
                             }
-                                   
-                                
-                                    
+                            
+                            
+                            
                             
                             
                         }
@@ -172,7 +171,7 @@ struct MainView: View {
                         Image(systemName: showingMenu ? "chevron.down.circle" : "chevron.up.circle")
                             .foregroundColor(Color("ButtonColor"))
                     }
-                   
+                    
                 }
                 if showingMenu == true{
                     Divider()
@@ -188,7 +187,7 @@ struct MainView: View {
                                 .cornerRadius(.infinity)
                         }
                         .fullScreenCover(isPresented: $showGoalView) {
-                            GoalView(viewModel: goalViewModel)
+                            GoalView(viewModel: viewModel)
                         }
                         Button {
                             

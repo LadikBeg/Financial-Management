@@ -10,6 +10,8 @@ import SwiftUI
 
 class ViewModel:ObservableObject{
     @Published var transaction:[UUID:Transaction] = [:]
+    @Published var goals:[UUID:Goal] = [:]
+
     var wallet = Wallet.sharedWallet
     
     //Transaction
@@ -85,11 +87,7 @@ class ViewModel:ObservableObject{
     func locolizeString(category:String) -> String{
         return NSLocalizedString(category, comment: "")
     }
-}
-
-class GoalViewModel:ObservableObject{
-    @Published var goals:[UUID:Goal] = [:]
-    var wallet = Wallet.sharedWallet
+    
     func addGoal(goalName:String , goalAmountMoney:Double){
         let id = UUID()
         print("id - \(id)")
@@ -103,11 +101,17 @@ class GoalViewModel:ObservableObject{
         }
         return goalArray
     }
-    func addMoneyToGoal(amountMoney:Double,id:UUID){
-        goals[id]?.collectedMoney += amountMoney
+    func addMoneyToGoal(amountMoney:Double,key:UUID){
+        let id = UUID()
+        goals[key]?.collectedMoney += amountMoney
         let amount = wallet.getAmountMoneyCard() - amountMoney
         wallet.setAmountMoneyCard(amountMoney: amount)
-        objectWillChange.send()
+        let newTransaction = Transaction(amountMoneyToAdd: amountMoney, walletType: "💳", note: "", category: "Goal", date: Date(), typeTransaction: "-")
+        transaction[id] = newTransaction
     }
 }
+
+
+
+
 

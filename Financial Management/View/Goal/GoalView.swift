@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GoalView: View {
-    @ObservedObject var viewModel:GoalViewModel
+    @ObservedObject var viewModel:ViewModel
     @State var addMoneyToGoalView:Bool = false
     @State var infoGoalView:Bool = false
     @State var showAddGoalView:Bool = false
@@ -46,23 +46,23 @@ struct GoalView: View {
                                         }
                                     }
                                     .font(.footnote)
-                                    .foregroundColor(.gray)
                                     HStack{
                                         ProgressView(value: goal.collectedMoney , total: goal.amountMoneyToGoal)
-                                        NavigationLink {
-                                            InfoGoalView(title: goal.goalName, collectedMoney: goal.collectedMoney, amountMoneyToGoal: goal.amountMoneyToGoal, progress: goal.progress, startDate: goal.startDate, expirationDate: Date())
-                                        } label: {
-                                            Image(systemName: "info.circle")
-                                        }
-                                        NavigationLink {
-                                            AddMoneyToGoal(goalName: goal.goalName, id: id, viewModel: viewModel,collectedMoney:goal.collectedMoney, amountMoneyToGoal:goal.amountMoneyToGoal)
-                                        } label: {
-                                            Image(systemName: "plus.circle")
+                                            .tint(.white)
+                                        if goal.collectedMoney < goal.amountMoneyToGoal {
+                                            NavigationLink {
+                                                AddMoneyToGoal(goalName: goal.goalName, id: id, viewModel: viewModel,collectedMoney:goal.collectedMoney, amountMoneyToGoal:goal.amountMoneyToGoal, selectedWalletType: "💳")
+                                            } label: {
+                                                Image(systemName: "plus.circle")
+                                            }
+                                        }else{
+                                            Image(systemName: "checkmark")
                                         }
                                     }
                                 }
                                 .padding()
-                                .background(Color("FormColor"))
+                                .background(goal.collectedMoney < goal.amountMoneyToGoal ? Color("FormGoalColor") : Color.green)
+                                .foregroundColor(Color("TextInFormColor"))
                                 .cornerRadius(15)
                             }
                         }
@@ -73,7 +73,19 @@ struct GoalView: View {
                     }
                 }
             }
+            .navigationBarItems(leading: 
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    HStack(spacing:5){
+                        Image(systemName: "chevron.left")
+                        Text("Back")
+                    }
+                })
+            
+            )
             .navigationTitle("Goal")
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
@@ -83,6 +95,6 @@ struct GoalView: View {
 
 struct GoalView_Previews: PreviewProvider {
     static var previews: some View {
-        GoalView(viewModel: GoalViewModel())
+        GoalView(viewModel: ViewModel())
     }
 }

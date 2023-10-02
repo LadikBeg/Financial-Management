@@ -12,8 +12,8 @@ struct addGoalView: View {
     @State var goalAmountMoney:String = ""
     @State var dateIsOn:Bool = false
     @State var date = Date()
-    @ObservedObject var viewModel:GoalViewModel
-
+    @ObservedObject var viewModel:ViewModel
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -65,7 +65,7 @@ struct addGoalView: View {
                                 .tint(Color("DateColor"))
                                 .datePickerStyle(.graphical)
                         }
-
+                        
                     }
                     
                 }
@@ -94,15 +94,15 @@ struct addGoalView: View {
                     .padding(.bottom)
                     .foregroundColor(.white)
                 }
-
+                
             }
         }
         .padding(.top)
     }
-    }
+}
 
 struct addGoalView_Previews: PreviewProvider {
     static var previews: some View {
-        addGoalView(viewModel: GoalViewModel())
+        addGoalView(viewModel: ViewModel())
     }
 }

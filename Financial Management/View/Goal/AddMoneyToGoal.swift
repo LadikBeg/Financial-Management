@@ -12,16 +12,19 @@ struct AddMoneyToGoal: View {
     @State var id:UUID
     @State var amountMoney:String = ""
     @State var date = Date()
-    @ObservedObject var viewModel:GoalViewModel
+    @ObservedObject var viewModel:ViewModel
     @State var collectedMoney:Double
     @State var amountMoneyToGoal:Double
     @Environment(\.presentationMode) var presentationMode
-
+    @State var selectedWalletType:String
+    @State var walletType = ["💳","💶"]
+    
     func formatDate(date: Date) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd.MM.yy"
         return dateFormatter.string(from: date)
     }
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -37,7 +40,7 @@ struct AddMoneyToGoal: View {
                     .keyboardType(.decimalPad)
                     .onChange(of: amountMoney) { newValue in
                         let filtered = newValue
-                            .replacingOccurrences(of: ",", with: ".") 
+                            .replacingOccurrences(of: ",", with: ".")
                             .filter { "0123456789.".contains($0) }
                         if filtered != newValue {
                             self.amountMoney = filtered
@@ -45,7 +48,19 @@ struct AddMoneyToGoal: View {
                     }
                 }
                 .padding(.horizontal)
-                
+                VStack(alignment:.leading){
+                    Text("Select the type of wallet from which you transfer money").font(.footnote)                        .foregroundColor(.gray)
+                    Picker("Wallet type", selection: $selectedWalletType) {
+                        ForEach(walletType,id: \.self) { walletType in
+                            Text(walletType)
+                        }
+                        
+                    }
+                    .pickerStyle(.segmented)
+                    
+                }
+                .padding(.top)
+                .padding(.horizontal)
                 Form{
                     Section("formAdditionally"){
                         HStack{
@@ -55,9 +70,15 @@ struct AddMoneyToGoal: View {
                                 .foregroundColor(.gray)
                         }
                         HStack{
-                            Text("Осталось собрать")
+                            Text("Цель")
                             Spacer()
                             Text("\(String(format: "%.2f",amountMoneyToGoal)) €")
+                                .foregroundColor(.gray)
+                        }
+                        HStack{
+                            Text("Осталось собрать")
+                            Spacer()
+                            Text("\(String(format: "%.2f",amountMoneyToGoal - collectedMoney)) €")
                                 .foregroundColor(.gray)
                         }
                         HStack{
@@ -84,7 +105,7 @@ struct AddMoneyToGoal: View {
                 //Add button
                 Button {
                     presentationMode.wrappedValue.dismiss()
-                    viewModel.addMoneyToGoal(amountMoney: Double(amountMoney) ?? 0, id: id)
+                    viewModel.addMoneyToGoal(amountMoney: Double(amountMoney) ?? 0, key: id)
                 } label: {
                     HStack{
                         HStack{
@@ -110,6 +131,7 @@ struct AddMoneyToGoal: View {
 
 struct AddMoneyToGoal_Previews: PreviewProvider {
     static var previews: some View {
-        AddMoneyToGoal(goalName: "Test", id: UUID(), viewModel: GoalViewModel(),collectedMoney:20,amountMoneyToGoal:251)
+        AddMoneyToGoal(goalName: "Test", id: UUID(), viewModel: ViewModel(),collectedMoney:20,amountMoneyToGoal:251, selectedWalletType: "💳")
     }
 }
+
