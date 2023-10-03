@@ -11,6 +11,7 @@
 		AC55CFFA2AC20B8000B8D076 /* addGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC55CFF92AC20B8000B8D076 /* addGoalView.swift */; };
 		AC710B742AC219D3004FF157 /* InfoGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC710B732AC219D3004FF157 /* InfoGoalView.swift */; };
 		AC710B7B2AC22802004FF157 /* AddMoneyToGoal.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC710B7A2AC22802004FF157 /* AddMoneyToGoal.swift */; };
+		ACA021B82ACC541C001EDF58 /* EmojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA021B72ACC541C001EDF58 /* EmojiView.swift */; };
 		ACB004A72ABB45D40014AF20 /* Financial_ManagementApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB004A62ABB45D40014AF20 /* Financial_ManagementApp.swift */; };
 		ACB004A92ABB45D40014AF20 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB004A82ABB45D40014AF20 /* ContentView.swift */; };
 		ACB004AB2ABB45D50014AF20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB004AA2ABB45D50014AF20 /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		AC55CFF92AC20B8000B8D076 /* addGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addGoalView.swift; sourceTree = "<group>"; };
 		AC710B732AC219D3004FF157 /* InfoGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoGoalView.swift; sourceTree = "<group>"; };
 		AC710B7A2AC22802004FF157 /* AddMoneyToGoal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMoneyToGoal.swift; sourceTree = "<group>"; };
+		ACA021B72ACC541C001EDF58 /* EmojiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiView.swift; sourceTree = "<group>"; };
 		ACB004A32ABB45D40014AF20 /* Financial Management.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Financial Management.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACB004A62ABB45D40014AF20 /* Financial_ManagementApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Financial_ManagementApp.swift; sourceTree = "<group>"; };
 		ACB004A82ABB45D40014AF20 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				AC710B732AC219D3004FF157 /* InfoGoalView.swift */,
 				AC710B7A2AC22802004FF157 /* AddMoneyToGoal.swift */,
 				AC55CFF92AC20B8000B8D076 /* addGoalView.swift */,
+				ACA021B72ACC541C001EDF58 /* EmojiView.swift */,
 			);
 			path = Goal;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				AC710B742AC219D3004FF157 /* InfoGoalView.swift in Sources */,
 				ACFE22192ABC7C48006BB18D /* ViewModel .swift in Sources */,
 				ACFE221C2ABC8A48006BB18D /* WalletView.swift in Sources */,
+				ACA021B82ACC541C001EDF58 /* EmojiView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

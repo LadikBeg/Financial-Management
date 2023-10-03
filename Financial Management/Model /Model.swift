@@ -63,14 +63,14 @@ class Goal:Wallet{
     var amountMoneyToGoal:Double
     var startDate:Date
     var progress:Double
-    var showInfo:Bool
+    var emoji:String
     
-    init(goalName: String, collectedMoney: Double,amountMoneyToGoal:Double,startDate:Date,progress:Double,showInfo:Bool) {
+    init(goalName: String, collectedMoney: Double,amountMoneyToGoal:Double,startDate:Date,progress:Double,emoji:String) {
         self.goalName = goalName
         self.collectedMoney = collectedMoney
         self.amountMoneyToGoal = amountMoneyToGoal
         self.startDate = startDate
         self.progress = progress
-        self.showInfo = showInfo
+        self.emoji = emoji
     }
 }

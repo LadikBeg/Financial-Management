@@ -17,6 +17,7 @@ struct AddMoneyToGoal: View {
     @State var amountMoneyToGoal:Double
     @Environment(\.presentationMode) var presentationMode
     @State var selectedWalletType:String
+    @State var emoji:String
     @State var walletType = ["💳","💶"]
     
     func formatDate(date: Date) -> String {
@@ -29,7 +30,11 @@ struct AddMoneyToGoal: View {
         NavigationView{
             VStack{
                 VStack{
-                    Text("\(goalName)").font(.title)
+                    HStack{
+                        Text("\(goalName)")
+                        Text(emoji)
+                    }
+                    .font(.title)
                     TextField(text: $amountMoney) {
                         Text("1000 €")
                             .foregroundColor(.gray)
@@ -134,7 +139,7 @@ struct AddMoneyToGoal: View {
 
 struct AddMoneyToGoal_Previews: PreviewProvider {
     static var previews: some View {
-        AddMoneyToGoal(goalName: "Test", id: UUID(), viewModel: ViewModel(),collectedMoney:20,amountMoneyToGoal:251, selectedWalletType: "💳")
+        AddMoneyToGoal(goalName: "Дом", id: UUID(), viewModel: ViewModel(),collectedMoney:20,amountMoneyToGoal:251, selectedWalletType: "💳", emoji: "🏡")
     }
 }
 

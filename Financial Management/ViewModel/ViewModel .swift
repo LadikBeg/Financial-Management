@@ -88,10 +88,11 @@ class ViewModel:ObservableObject{
         return NSLocalizedString(category, comment: "")
     }
     
-    func addGoal(goalName:String , goalAmountMoney:Double){
+    //goal
+    func addGoal(goalName:String , goalAmountMoney:Double,emoji:String){
         let id = UUID()
         print("id - \(id)")
-        let newGoal = Goal(goalName: goalName, collectedMoney: 0, amountMoneyToGoal: goalAmountMoney, startDate: Date(), progress: 0.0, showInfo: false)
+        let newGoal = Goal(goalName: goalName, collectedMoney: 0, amountMoneyToGoal: goalAmountMoney, startDate: Date(), progress: 0.0, emoji: emoji)
         goals[id] = newGoal
         print("goal - \(goals)")
     }
@@ -108,6 +109,19 @@ class ViewModel:ObservableObject{
         wallet.setAmountMoneyCard(amountMoney: amount)
         let newTransaction = Transaction(amountMoneyToAdd: amountMoney, walletType: "💳", note: "", category: "Goal", date: Date(), typeTransaction: "-")
         transaction[id] = newTransaction
+    }
+    func getMessageEmptyField(amount amountMoneyToGoal:String, name nameGoal:String ) ->String{
+        var message = ""
+        if amountMoneyToGoal.isEmpty{
+            message = "The amount to be collected cannot be zero."
+        }
+        if nameGoal.isEmpty{
+            message = "The target name field cannot be empty."
+        }
+        if(nameGoal.isEmpty && amountMoneyToGoal.isEmpty){
+            message = "Fill in all fields."
+        }
+        return message
     }
 }
 

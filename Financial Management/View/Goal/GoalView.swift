@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct GoalView: View {
     @ObservedObject var viewModel:ViewModel
     @State var addMoneyToGoalView:Bool = false
@@ -32,17 +33,17 @@ struct GoalView: View {
                             ForEach(viewModel.getGoal(), id: \.0) { id, goal in
                                 VStack(alignment:.leading){
                                     HStack{
+                                        Text(goal.emoji)
+                                            .font(.title)
                                         Text(goal.goalName)
                                         Spacer()
                                         Text("\(String(goal.collectedMoney)) €")
                                     }
                                     VStack(alignment:.leading){
                                         HStack{
-                                            Text("From:")
-                                            Text(formatDate(date: goal.startDate))
-                                            Spacer()
                                             Text("Need to collect:")
-                                            Text(String(goal.amountMoneyToGoal))
+                                            Text("\(String(goal.amountMoneyToGoal))€")
+                                            Spacer()
                                         }
                                     }
                                     .font(.footnote)
@@ -51,7 +52,7 @@ struct GoalView: View {
                                             .tint(.white)
                                         if goal.collectedMoney < goal.amountMoneyToGoal {
                                             NavigationLink {
-                                                AddMoneyToGoal(goalName: goal.goalName, id: id, viewModel: viewModel,collectedMoney:goal.collectedMoney, amountMoneyToGoal:goal.amountMoneyToGoal, selectedWalletType: "💳")
+                                                AddMoneyToGoal(goalName: goal.goalName, id: id, viewModel: viewModel,collectedMoney:goal.collectedMoney, amountMoneyToGoal:goal.amountMoneyToGoal, selectedWalletType: "💳",emoji: goal.emoji)
                                             } label: {
                                                 Image(systemName: "plus.circle")
                                             }
@@ -62,7 +63,7 @@ struct GoalView: View {
                                 }
                                 .padding()
                                 .background(goal.collectedMoney < goal.amountMoneyToGoal ? Color("FormGoalColor") : Color.green)
-                                .foregroundColor(Color("TextInFormColor"))
+                                .foregroundColor(Color.white)
                                 .cornerRadius(15)
                             }
                         }

@@ -12,14 +12,40 @@ struct addGoalView: View {
     @State var goalAmountMoney:String = ""
     @State var dateIsOn:Bool = false
     @State var date = Date()
+    @State var error = false
     @ObservedObject var viewModel:ViewModel
+    @State var emoji = ["😀","😄","🥹","🥰","🙂","😌",
+                        "🎥","🖥️","⌚️","💻","📱","📷",
+                        "🐶","🐱","🐭","🐹","🦊","🐮",
+                        "⚽️","🏀","🏈","🎾","🏓","🥊",
+                        "🧘‍♀️","🤽","🤺","🏂","🪂","🧗",
+                        "🚗","🚲","🛴","✈️","🏖️","🛳️",
+                        "🏡","🏠","🏘️","🏚️","🛖","⛺️",
+                        "🏢","💒","🏥","🏬","⛪️","🏣"]
+    @State var selectedEmoji = "🙂"
+    @Environment(\.presentationMode) var presentationMode
+
+    
     
     var body: some View {
         NavigationView{
             VStack{
+                NavigationLink {
+                    EmojiView(selectedEmoji: $selectedEmoji, emoji: emoji)
+                        .navigationBarBackButtonHidden(true)
+                } label: {
+                    Text("\(selectedEmoji)")
+                        .padding()
+                        .background(Color("FormColor"))
+                        .cornerRadius(.infinity)
+                        .font(.largeTitle)
+                        
+                }
+                
+
                 VStack{
                     TextField(text: $goalName) {
-                        Text("iPhone")
+                        Text("Goal name")
                             .foregroundColor(.gray)
                     }
                     .padding()
@@ -78,7 +104,11 @@ struct addGoalView: View {
                 
                 //Add button
                 Button {
-                    viewModel.addGoal(goalName: goalName, goalAmountMoney: Double(goalAmountMoney) ?? 0)
+                    if (goalAmountMoney.isEmpty || goalName.isEmpty){
+                        error.toggle()
+                    }else{
+                        viewModel.addGoal(goalName: goalName, goalAmountMoney: Double(goalAmountMoney) ?? 0, emoji: selectedEmoji)
+                    }
                 } label: {
                     HStack{
                         HStack{
@@ -93,11 +123,17 @@ struct addGoalView: View {
                     .cornerRadius(15)
                     .padding(.bottom)
                     .foregroundColor(.white)
+                    .alert("Error", isPresented: $error) {
+                        
+                    } message: {
+                        Text(viewModel.getMessageEmptyField(amount: goalAmountMoney, name: goalName))
+                    }
+
+                    
                 }
                 
             }
         }
-        .padding(.top)
     }
 }
 
