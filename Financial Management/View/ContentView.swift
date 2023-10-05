@@ -72,7 +72,6 @@ struct MainView: View {
                                                         if !transaction.note.isEmpty{
                                                             HStack{
                                                                 Spacer()
-                                                                Text("Note:")
                                                                 Text(String(transaction.note))
                                                             }
                                                             
@@ -123,7 +122,6 @@ struct MainView: View {
                                                 if !transaction.note.isEmpty{
                                                     HStack{
                                                         Spacer()
-                                                        Text("Note:")
                                                         Text(String(transaction.note))
                                                     }
                                                     

@@ -41,10 +41,11 @@ struct GoalView: View {
                                     }
                                     VStack(alignment:.leading){
                                         HStack{
-                                            Text("Need to collect:")
+                                            Text("Target:")
                                             Text("\(String(goal.amountMoneyToGoal))€")
                                             Spacer()
                                         }
+                                        .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.916))
                                     }
                                     .font(.footnote)
                                     HStack{
@@ -68,23 +69,26 @@ struct GoalView: View {
                             }
                         }
                     }
-                    .padding()
-                    NavigationLink("Add goal") {
+                    .navigationBarItems(trailing:
+                                            NavigationLink {
                         addGoalView(viewModel: viewModel)
+                    } label: {
+                        Image(systemName: "plus.circle")
                     }
+                    )
+                    .padding()
+                    
                 }
             }
-            .navigationBarItems(leading: 
+            .navigationBarItems(leading:
                 Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                }, label: {
-                    HStack(spacing:5){
-                        Image(systemName: "chevron.left")
-                        Text("Back")
-                    }
-                })
-            
-            )
+                presentationMode.wrappedValue.dismiss()
+            }, label: {
+                HStack(spacing:5){
+                    Image(systemName: "chevron.left")
+                    Text("Back")
+                }
+            }))
             .navigationTitle("Goal")
             .navigationBarTitleDisplayMode(.inline)
         }

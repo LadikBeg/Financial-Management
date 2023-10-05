@@ -32,6 +32,7 @@ struct AddMoneyToGoal: View {
                 VStack{
                     HStack{
                         Text("\(goalName)")
+                            .foregroundColor(Color("TextInFormColor"))
                         Text(emoji)
                     }
                     .font(.title)
@@ -47,14 +48,19 @@ struct AddMoneyToGoal: View {
                         let filtered = newValue
                             .replacingOccurrences(of: ",", with: ".")
                             .filter { "0123456789.".contains($0) }
+                        var result  = amountMoneyToGoal - collectedMoney
+                        if Double(newValue) ?? 0.0 > result{
+                            amountMoney = String(result)
+                        }
                         if filtered != newValue {
                             self.amountMoney = filtered
+                            
                         }
                     }
                 }
                 .padding(.horizontal)
                 VStack(alignment:.leading){
-                    Text("Select the type of wallet from which you transfer money").font(.footnote)                        .foregroundColor(.gray)
+                    Text("Select the type of wallet from which you transfer money").font(.footnote).foregroundColor(.gray)
                     Picker("Wallet type", selection: $selectedWalletType) {
                         ForEach(walletType,id: \.self) { walletType in
                             Text(walletType)
@@ -98,7 +104,7 @@ struct AddMoneyToGoal: View {
                         HStack{
                             Text("Выполнено")
                             Spacer()
-                            Text("\(String(format: "%.1f",collectedMoney / amountMoneyToGoal * 100)) %")                                .foregroundColor(.gray)
+                            Text("\(String(format: "%.1f",collectedMoney / amountMoneyToGoal * 100)) %").foregroundColor(.gray)
                         }
                     }
                     
@@ -107,13 +113,14 @@ struct AddMoneyToGoal: View {
                 .background(Color("FormColor"))
                 .cornerRadius(15)
                 .padding()
+                .foregroundColor(Color("TextInFormColor"))
                 
                 
                 
                 //Add button
                 Button {
                     presentationMode.wrappedValue.dismiss()
-                    viewModel.addMoneyToGoal(amountMoney: Double(amountMoney) ?? 0, key: id)
+                    viewModel.addMoneyToGoal(amountMoney: Double(amountMoney) ?? 0, key: id,selectedWalletType:selectedWalletType,emoji:emoji)
                 } label: {
                     HStack{
                         HStack{

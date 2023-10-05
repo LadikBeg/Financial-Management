@@ -102,12 +102,19 @@ class ViewModel:ObservableObject{
         }
         return goalArray
     }
-    func addMoneyToGoal(amountMoney:Double,key:UUID){
+    func addMoneyToGoal(amountMoney:Double,key:UUID,selectedWalletType:String, emoji:String){
         let id = UUID()
         goals[key]?.collectedMoney += amountMoney
-        let amount = wallet.getAmountMoneyCard() - amountMoney
-        wallet.setAmountMoneyCard(amountMoney: amount)
-        let newTransaction = Transaction(amountMoneyToAdd: amountMoney, walletType: "💳", note: "", category: "Goal", date: Date(), typeTransaction: "-")
+        var amount = 0.0
+        if selectedWalletType == "💳"{
+            amount = wallet.getAmountMoneyCard() - amountMoney
+            wallet.setAmountMoneyCard(amountMoney: amount)
+
+        }else{
+            amount = wallet.getAmountMoneyCash() - amountMoney
+            wallet.setAmountMoneyCash(amountMoney: amount)
+        }
+        let newTransaction = Transaction(amountMoneyToAdd: amountMoney, walletType: "💳", note: "", category: emoji + (goals[key]?.goalName ?? ""), date: Date(), typeTransaction: "-")
         transaction[id] = newTransaction
     }
     func getMessageEmptyField(amount amountMoneyToGoal:String, name nameGoal:String ) ->String{

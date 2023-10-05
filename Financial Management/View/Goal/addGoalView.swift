@@ -52,11 +52,13 @@ struct addGoalView: View {
                     .background(Color("TextFieldColor"))
                     .cornerRadius(15)
                     .keyboardType(.default)
-                    
+                    .foregroundColor(.black)
+
                     TextField(text: $goalAmountMoney) {
                         Text("1000 €")
                             .foregroundColor(.gray)
                     }
+                    .foregroundColor(.black)
                     .padding()
                     .background(Color("TextFieldColor"))
                     .cornerRadius(15)
@@ -85,7 +87,6 @@ struct addGoalView: View {
                             }
                         }
                         .tint(Color("ToggleColor"))
-                        
                         if dateIsOn {
                             DatePicker("additionallyDate", selection: $date , displayedComponents: .date)
                                 .tint(Color("DateColor"))
@@ -95,6 +96,7 @@ struct addGoalView: View {
                     }
                     
                 }
+                .foregroundColor(Color("TextInFormColor"))
                 .scrollContentBackground(.hidden)
                 .background(Color("FormColor"))
                 .cornerRadius(15)
