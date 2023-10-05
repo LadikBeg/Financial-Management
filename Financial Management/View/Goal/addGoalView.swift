@@ -14,14 +14,17 @@ struct addGoalView: View {
     @State var date = Date()
     @State var error = false
     @ObservedObject var viewModel:ViewModel
-    @State var emoji = ["😀","😄","🥹","🥰","🙂","😌",
-                        "🎥","🖥️","⌚️","💻","📱","📷",
-                        "🐶","🐱","🐭","🐹","🦊","🐮",
-                        "⚽️","🏀","🏈","🎾","🏓","🥊",
-                        "🧘‍♀️","🤽","🤺","🏂","🪂","🧗",
-                        "🚗","🚲","🛴","✈️","🏖️","🛳️",
-                        "🏡","🏠","🏘️","🏚️","🛖","⛺️",
-                        "🏢","💒","🏥","🏬","⛪️","🏣"]
+    @State var emoji = ["😀","😄","🥹","🥰","🙂","😌","🧐","🤓","🥸","🥵","🤯","🤫","🤤","🤕"]
+    
+    @State var emojiTechnique = ["📱","⌚️","💻","⌨️","🖥️","🖨️","🖱️","🖲️","🕹️","📷","📸","📹",
+                                 "🎥","📽️","☎️","🎛️","🎙️","🔦","🔬","🔭","🛴"]
+    @State var emojiActivity = ["⚽️","🏀","🏈","🎾","🎱","🏓","🏸","🏒","🤿","🎣","🥋","🪂","🏋️‍♀️","🤼"
+                                ,"⛷️","🏂","🏄‍♀️","🧗","🚴‍♀️","🏊‍♀️","🎁"]
+    @State var emojiTravel = ["🚠","🚄","✈️","🛫","🛳️","🛟","🛖","⛺️","🏕️","🏖️","🏝️","🏜️","⛰️","⛩️","🕌","🕍","🛕","🌇","🏙️","🌁","🌄"]
+    //Travel and places
+    @State var emojiFood = ["🍏","🍎","🍐","🍊","🍋","🍌","🍉","🍇","🍓","🌶️","🍔","🌭","🍟","🍕","🥪","🍱","🍤"]
+    
+    
     @State var selectedEmoji = "🙂"
     @Environment(\.presentationMode) var presentationMode
 
@@ -31,7 +34,7 @@ struct addGoalView: View {
         NavigationView{
             VStack{
                 NavigationLink {
-                    EmojiView(selectedEmoji: $selectedEmoji, emoji: emoji)
+                    EmojiView(selectedEmoji: $selectedEmoji, emoji: emoji, tech: emojiTechnique,activity:emojiActivity, travel: emojiTravel, food: emojiFood)
                         .navigationBarBackButtonHidden(true)
                 } label: {
                     Text("\(selectedEmoji)")
@@ -80,8 +83,8 @@ struct addGoalView: View {
                         //Date piker
                         Toggle(isOn: $dateIsOn) {
                             VStack(alignment: .leading,spacing: 5){
-                                Text("additionallyDate")
-                                Text("additionallyDateInfo")
+                                Text("Дата окончания")
+                                Text("Выберите дату к которой нужно собрать сумму")
                                     .font(.system(size: 14))
                                     .foregroundColor(.gray)
                             }
@@ -90,7 +93,6 @@ struct addGoalView: View {
                         if dateIsOn {
                             DatePicker("additionallyDate", selection: $date , displayedComponents: .date)
                                 .tint(Color("DateColor"))
-                                .datePickerStyle(.graphical)
                         }
                         
                     }
@@ -130,7 +132,12 @@ struct addGoalView: View {
                     } message: {
                         Text(viewModel.getMessageEmptyField(amount: goalAmountMoney, name: goalName))
                     }
-
+                    Button(action: {
+                        viewModel.getExpensesForDay(date: Date())
+                        print(viewModel.getExpensesForDay(date: Date()))
+                    }, label: {
+                        Text("get")
+                    })
                     
                 }
                 

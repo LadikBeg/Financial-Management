@@ -33,34 +33,38 @@ struct GoalView: View {
                             ForEach(viewModel.getGoal(), id: \.0) { id, goal in
                                 VStack(alignment:.leading){
                                     HStack{
-                                        Text(goal.emoji)
-                                            .font(.title)
-                                        Text(goal.goalName)
+                                        Gauge(value: goal.collectedMoney, in: 0...goal.amountMoneyToGoal) {
+                                            Text(goal.emoji)
+                                                .font(.title)
+                                        }
+                                        .gaugeStyle(.accessoryCircularCapacity)
+                                        .tint(.white)
+                                        VStack(alignment:.leading, spacing:7){
+                                            Text(goal.goalName)
+                                            Text("\(String(goal.amountMoneyToGoal))€")
+                                                .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.916))
+                                        }
                                         Spacer()
-                                        Text("\(String(goal.collectedMoney)) €")
+                                        VStack(alignment:.trailing , spacing:7){
+                                            HStack{
+                                                if goal.collectedMoney < goal.amountMoneyToGoal {
+                                                    NavigationLink {
+                                                        AddMoneyToGoal(goalName: goal.goalName, id: id, viewModel: viewModel,collectedMoney:goal.collectedMoney, amountMoneyToGoal:goal.amountMoneyToGoal, selectedWalletType: "💳",emoji: goal.emoji)
+                                                    } label: {
+                                                        Image(systemName: "plus.circle")
+                                                    }
+                                                }else{
+                                                    Image(systemName: "checkmark")
+                                                }
+                                            }
+                                            Text("\(String(goal.collectedMoney)) €")
+                                        }
                                     }
                                     VStack(alignment:.leading){
-                                        HStack{
-                                            Text("Target:")
-                                            Text("\(String(goal.amountMoneyToGoal))€")
-                                            Spacer()
-                                        }
-                                        .foregroundColor(Color(hue: 1.0, saturation: 0.0, brightness: 0.916))
+                                        
                                     }
                                     .font(.footnote)
-                                    HStack{
-                                        ProgressView(value: goal.collectedMoney , total: goal.amountMoneyToGoal)
-                                            .tint(.white)
-                                        if goal.collectedMoney < goal.amountMoneyToGoal {
-                                            NavigationLink {
-                                                AddMoneyToGoal(goalName: goal.goalName, id: id, viewModel: viewModel,collectedMoney:goal.collectedMoney, amountMoneyToGoal:goal.amountMoneyToGoal, selectedWalletType: "💳",emoji: goal.emoji)
-                                            } label: {
-                                                Image(systemName: "plus.circle")
-                                            }
-                                        }else{
-                                            Image(systemName: "checkmark")
-                                        }
-                                    }
+                                    
                                 }
                                 .padding()
                                 .background(goal.collectedMoney < goal.amountMoneyToGoal ? Color("FormGoalColor") : Color.green)
@@ -74,8 +78,7 @@ struct GoalView: View {
                         addGoalView(viewModel: viewModel)
                     } label: {
                         Image(systemName: "plus.circle")
-                    }
-                    )
+                    })
                     .padding()
                     
                 }

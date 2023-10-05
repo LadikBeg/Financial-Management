@@ -21,6 +21,7 @@
 		ACB004C22ABB45D50014AF20 /* Financial_ManagementUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB004C12ABB45D50014AF20 /* Financial_ManagementUITests.swift */; };
 		ACB004C42ABB45D50014AF20 /* Financial_ManagementUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB004C32ABB45D50014AF20 /* Financial_ManagementUITestsLaunchTests.swift */; };
 		ACC4B08C2ABFF37B00394240 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ACC4B08E2ABFF37B00394240 /* Localizable.strings */; };
+		ACE6D0732ACF1B8D001CA5EA /* FuturePayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE6D0722ACF1B8D001CA5EA /* FuturePayment.swift */; };
 		ACFE22152ABC79DA006BB18D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE22142ABC79DA006BB18D /* Model.swift */; };
 		ACFE22192ABC7C48006BB18D /* ViewModel .swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE22182ABC7C48006BB18D /* ViewModel .swift */; };
 		ACFE221C2ABC8A48006BB18D /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFE221B2ABC8A48006BB18D /* WalletView.swift */; };
@@ -62,6 +63,7 @@
 		ACB004C32ABB45D50014AF20 /* Financial_ManagementUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Financial_ManagementUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		ACC4B08D2ABFF37B00394240 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ACC4B0902ABFF7B900394240 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ACE6D0722ACF1B8D001CA5EA /* FuturePayment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuturePayment.swift; sourceTree = "<group>"; };
 		ACFE22142ABC79DA006BB18D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		ACFE22182ABC7C48006BB18D /* ViewModel .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewModel .swift"; sourceTree = "<group>"; };
 		ACFE221B2ABC8A48006BB18D /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				AC402E5B2ACEA98600A158AD /* AddFuturePaymentView.swift */,
+				ACE6D0722ACF1B8D001CA5EA /* FuturePayment.swift */,
 			);
 			path = FuturePayment;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				AC55CFFA2AC20B8000B8D076 /* addGoalView.swift in Sources */,
 				AC710B7B2AC22802004FF157 /* AddMoneyToGoal.swift in Sources */,
 				ACB004A92ABB45D40014AF20 /* ContentView.swift in Sources */,
+				ACE6D0732ACF1B8D001CA5EA /* FuturePayment.swift in Sources */,
 				AC55CFF82AC2086800B8D076 /* GoalView.swift in Sources */,
 				AC402E5C2ACEA98600A158AD /* AddFuturePaymentView.swift in Sources */,
 				ACB004A72ABB45D40014AF20 /* Financial_ManagementApp.swift in Sources */,

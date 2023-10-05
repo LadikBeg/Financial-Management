@@ -74,3 +74,16 @@ class Goal:Wallet{
         self.emoji = emoji
     }
 }
+
+
+
+class PaymentInFuture:Wallet{
+    var FPName:String
+    var FPAmount:Double
+    var isDone:Bool
+    init(FPName: String, FPAmount: Double, isDone:Bool) {
+        self.FPName = FPName
+        self.FPAmount = FPAmount
+        self.isDone = isDone
+    }
+}

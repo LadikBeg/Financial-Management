@@ -11,6 +11,7 @@ struct MainView: View {
     @State var showingMenu = false
     @State var showAddView = false
     @State var showGoalView = false
+    @State var showFuturePaymentView = false
     @State var showCalendarHistoryView = false
     @ObservedObject var viewModel = ViewModel()
     
@@ -188,7 +189,7 @@ struct MainView: View {
                             GoalView(viewModel: viewModel)
                         }
                         Button {
-                            
+                            showFuturePaymentView.toggle()
                         } label: {
                             Image(systemName: "clock.badge")
                                 .foregroundColor(.white)
@@ -196,6 +197,9 @@ struct MainView: View {
                                 .background(Color("ButtonColor"))
                                 .cornerRadius(.infinity)
                             
+                        }
+                        .fullScreenCover(isPresented: $showFuturePaymentView) {
+                            FuturePayment(viewModel: viewModel)
                         }
                         Button {
                             
